@@ -6,7 +6,7 @@ The 'Slack' style emoji picker for MacOS 🌊
 
 Apps like Slack and WhatsApp, have implemented keyboard-based emoji pickers that use emoji shortcodes for fast emoji input.
 
-Type the emoji short name or keyword, for example *:tada:* (🎉) to autofill an emoji
+Type the emoji short name or keyword, for example *:tada* (🎉) to autofill an emoji
 
 
 ## Installation 📦
