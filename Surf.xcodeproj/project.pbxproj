@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4127C52525603FD6002C1057 /* ClickableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4127C52425603FD6002C1057 /* ClickableTableView.m */; };
+		4136A103259BBC6A003B5B35 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4136A102259BBC6A003B5B35 /* About.xib */; };
+		4136A115259C945E003B5B35 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4136A113259C945E003B5B35 /* PreferencesController.m */; };
+		4136A116259C945E003B5B35 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4136A114259C945E003B5B35 /* Preferences.xib */; };
+		4136A11A259C9F09003B5B35 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4136A119259C9F09003B5B35 /* Preferences.m */; };
+		4136A125259CEE7B003B5B35 /* AccessibilityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4136A124259CEE7B003B5B35 /* AccessibilityHelper.m */; };
+		4136A12B259D0CBA003B5B35 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4136A12A259D0CBA003B5B35 /* AboutController.m */; };
+		416B53882556E35B00766B82 /* EventTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 416B53872556E35B00766B82 /* EventTap.m */; };
+		41751FAC254C6A95000B1398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41751FAB254C6A95000B1398 /* AppDelegate.m */; };
+		41751FB7254C6A9B000B1398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41751FB6254C6A9B000B1398 /* main.m */; };
+		419F444C259A376E0044E9F6 /* emoji-withkeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 419F444B259A376D0044E9F6 /* emoji-withkeywords.json */; };
+		41ACC52E254C7D250088B9B0 /* EmojiSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ACC52C254C7D250088B9B0 /* EmojiSelectController.m */; };
+		41ACC52F254C7D250088B9B0 /* EmojiPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ACC52D254C7D250088B9B0 /* EmojiPopover.xib */; };
+		41F188952572456800E1A04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F188942572456800E1A04F /* Assets.xcassets */; };
+		41F2EF82259BB856005E1960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F2EF80259BB856005E1960 /* Main.storyboard */; };
+		41FB886425600BEF00377F8A /* VerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB886325600BEF00377F8A /* VerticallyCenteredTextFieldCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4127C52325603FD6002C1057 /* ClickableTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickableTableView.h; sourceTree = "<group>"; };
+		4127C52425603FD6002C1057 /* ClickableTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickableTableView.m; sourceTree = "<group>"; };
+		4136A102259BBC6A003B5B35 /* About.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
+		4136A112259C945E003B5B35 /* PreferencesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
+		4136A113259C945E003B5B35 /* PreferencesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
+		4136A114259C945E003B5B35 /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
+		4136A119259C9F09003B5B35 /* Preferences.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Preferences.m; sourceTree = "<group>"; };
+		4136A11C259C9F1D003B5B35 /* Preferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Preferences.h; sourceTree = "<group>"; };
+		4136A123259CEE66003B5B35 /* AccessibilityHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccessibilityHelper.h; sourceTree = "<group>"; };
+		4136A124259CEE7B003B5B35 /* AccessibilityHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessibilityHelper.m; sourceTree = "<group>"; };
+		4136A129259D0CB9003B5B35 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
+		4136A12A259D0CBA003B5B35 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
+		416B53862556E35B00766B82 /* EventTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTap.h; sourceTree = "<group>"; };
+		416B53872556E35B00766B82 /* EventTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTap.m; sourceTree = "<group>"; };
+		41751FA7254C6A95000B1398 /* Surf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41751FAA254C6A95000B1398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		41751FAB254C6A95000B1398 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		41751FB5254C6A9B000B1398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41751FB6254C6A9B000B1398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		41751FB8254C6A9B000B1398 /* Surf.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Surf.entitlements; sourceTree = "<group>"; };
+		419F444B259A376D0044E9F6 /* emoji-withkeywords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "emoji-withkeywords.json"; sourceTree = "<group>"; };
+		41ACC52B254C7D250088B9B0 /* EmojiSelectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmojiSelectController.h; sourceTree = "<group>"; };
+		41ACC52C254C7D250088B9B0 /* EmojiSelectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmojiSelectController.m; sourceTree = "<group>"; };
+		41ACC52D254C7D250088B9B0 /* EmojiPopover.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiPopover.xib; sourceTree = "<group>"; };
+		41F188942572456800E1A04F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41F2EF81259BB856005E1960 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		41FB886225600BEF00377F8A /* VerticallyCenteredTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticallyCenteredTextFieldCell.h; sourceTree = "<group>"; };
+		41FB886325600BEF00377F8A /* VerticallyCenteredTextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticallyCenteredTextFieldCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41751FA4254C6A95000B1398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4136A109259C93A3003B5B35 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4136A129259D0CB9003B5B35 /* AboutController.h */,
+				4136A12A259D0CBA003B5B35 /* AboutController.m */,
+				4136A102259BBC6A003B5B35 /* About.xib */,
+				4127C52325603FD6002C1057 /* ClickableTableView.h */,
+				4127C52425603FD6002C1057 /* ClickableTableView.m */,
+				41ACC52D254C7D250088B9B0 /* EmojiPopover.xib */,
+				41ACC52B254C7D250088B9B0 /* EmojiSelectController.h */,
+				41ACC52C254C7D250088B9B0 /* EmojiSelectController.m */,
+				41F2EF80259BB856005E1960 /* Main.storyboard */,
+				41FB886225600BEF00377F8A /* VerticallyCenteredTextFieldCell.h */,
+				41FB886325600BEF00377F8A /* VerticallyCenteredTextFieldCell.m */,
+				4136A112259C945E003B5B35 /* PreferencesController.h */,
+				4136A113259C945E003B5B35 /* PreferencesController.m */,
+				4136A114259C945E003B5B35 /* Preferences.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		41751F9E254C6A95000B1398 = {
+			isa = PBXGroup;
+			children = (
+				41751FA9254C6A95000B1398 /* Surf */,
+				41751FA8254C6A95000B1398 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		41751FA8254C6A95000B1398 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41751FA7254C6A95000B1398 /* Surf.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41751FA9254C6A95000B1398 /* Surf */ = {
+			isa = PBXGroup;
+			children = (
+				41751FAA254C6A95000B1398 /* AppDelegate.h */,
+				41751FAB254C6A95000B1398 /* AppDelegate.m */,
+				41F188942572456800E1A04F /* Assets.xcassets */,
+				419F444B259A376D0044E9F6 /* emoji-withkeywords.json */,
+				416B53862556E35B00766B82 /* EventTap.h */,
+				416B53872556E35B00766B82 /* EventTap.m */,
+				4136A123259CEE66003B5B35 /* AccessibilityHelper.h */,
+				4136A124259CEE7B003B5B35 /* AccessibilityHelper.m */,
+				41751FB5254C6A9B000B1398 /* Info.plist */,
+				41751FB6254C6A9B000B1398 /* main.m */,
+				4136A11C259C9F1D003B5B35 /* Preferences.h */,
+				4136A119259C9F09003B5B35 /* Preferences.m */,
+				41751FB8254C6A9B000B1398 /* Surf.entitlements */,
+				4136A109259C93A3003B5B35 /* UI */,
+			);
+			path = Surf;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41751FA6254C6A95000B1398 /* Surf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41751FD1254C6A9B000B1398 /* Build configuration list for PBXNativeTarget "Surf" */;
+			buildPhases = (
+				41751FA3254C6A95000B1398 /* Sources */,
+				41751FA4254C6A95000B1398 /* Frameworks */,
+				41751FA5254C6A95000B1398 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Surf;
+			productName = Tsunami;
+			productReference = 41751FA7254C6A95000B1398 /* Surf.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41751F9F254C6A95000B1398 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					41751FA6254C6A95000B1398 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+				};
+			};
+			buildConfigurationList = 41751FA2254C6A95000B1398 /* Build configuration list for PBXProject "Surf" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 41751F9E254C6A95000B1398;
+			productRefGroup = 41751FA8254C6A95000B1398 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41751FA6254C6A95000B1398 /* Surf */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41751FA5254C6A95000B1398 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4136A116259C945E003B5B35 /* Preferences.xib in Resources */,
+				41ACC52F254C7D250088B9B0 /* EmojiPopover.xib in Resources */,
+				41F2EF82259BB856005E1960 /* Main.storyboard in Resources */,
+				41F188952572456800E1A04F /* Assets.xcassets in Resources */,
+				4136A103259BBC6A003B5B35 /* About.xib in Resources */,
+				419F444C259A376E0044E9F6 /* emoji-withkeywords.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41751FA3254C6A95000B1398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4127C52525603FD6002C1057 /* ClickableTableView.m in Sources */,
+				41751FB7254C6A9B000B1398 /* main.m in Sources */,
+				4136A11A259C9F09003B5B35 /* Preferences.m in Sources */,
+				4136A12B259D0CBA003B5B35 /* AboutController.m in Sources */,
+				41ACC52E254C7D250088B9B0 /* EmojiSelectController.m in Sources */,
+				416B53882556E35B00766B82 /* EventTap.m in Sources */,
+				41FB886425600BEF00377F8A /* VerticallyCenteredTextFieldCell.m in Sources */,
+				4136A125259CEE7B003B5B35 /* AccessibilityHelper.m in Sources */,
+				4136A115259C945E003B5B35 /* PreferencesController.m in Sources */,
+				41751FAC254C6A95000B1398 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		41F2EF80259BB856005E1960 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41F2EF81259BB856005E1960 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		41751FCF254C6A9B000B1398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0.1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		41751FD0254C6A9B000B1398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 0.1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		41751FD2254C6A9B000B1398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Surf/Surf.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Surf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.surf.Surf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		41751FD3254C6A9B000B1398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Surf/Surf.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Surf/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.surf.Surf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41751FA2254C6A95000B1398 /* Build configuration list for PBXProject "Surf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41751FCF254C6A9B000B1398 /* Debug */,
+				41751FD0254C6A9B000B1398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41751FD1254C6A9B000B1398 /* Build configuration list for PBXNativeTarget "Surf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41751FD2254C6A9B000B1398 /* Debug */,
+				41751FD3254C6A9B000B1398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41751F9F254C6A95000B1398 /* Project object */;
+}
