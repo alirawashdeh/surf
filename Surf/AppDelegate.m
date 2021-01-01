@@ -273,6 +273,11 @@ EventTap *tap;
                         NSApp.activationPolicy = NSApplicationActivationPolicyProhibited;
 
                         shown = true;
+
+                        [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self
+                            selector:@selector(appDeactivated:)
+                            name:NSWorkspaceDidDeactivateApplicationNotification
+                            object:nil];
                         
                         break;
                 }
@@ -280,6 +285,14 @@ EventTap *tap;
         }
     }
     return false;
+}
+
+-(void) appDeactivated:(NSNotification *)notification
+{
+    if(shown)
+    {
+        [self closeWithoutReturningEmoji];
+    }
 }
 
 - (NSRect) getRectForCenterOfScreen
@@ -305,11 +318,13 @@ EventTap *tap;
         [AccessibilityHelper returnBackspaceAndCharacterToCursor:[myView getSelectedEmoji] label:[myView getLabel]];
         [tap resume];
     }
+    [[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
 }
 
 - (void) closeWithoutReturningEmoji {
         [popover close];
         shown = false;
+        [[[NSWorkspace sharedWorkspace] notificationCenter] removeObserver:self];
 }
 
 @end
