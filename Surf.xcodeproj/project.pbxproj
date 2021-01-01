@@ -14,6 +14,7 @@
 		4136A11A259C9F09003B5B35 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 4136A119259C9F09003B5B35 /* Preferences.m */; };
 		4136A125259CEE7B003B5B35 /* AccessibilityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4136A124259CEE7B003B5B35 /* AccessibilityHelper.m */; };
 		4136A12B259D0CBA003B5B35 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4136A12A259D0CBA003B5B35 /* AboutController.m */; };
+		41599ED7259E4F97000A2BBC /* PreferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41599ED6259E4F97000A2BBC /* PreferencesTests.m */; };
 		416B53882556E35B00766B82 /* EventTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 416B53872556E35B00766B82 /* EventTap.m */; };
 		41751FAC254C6A95000B1398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41751FAB254C6A95000B1398 /* AppDelegate.m */; };
 		41751FB7254C6A9B000B1398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41751FB6254C6A9B000B1398 /* main.m */; };
@@ -24,6 +25,16 @@
 		41F2EF82259BB856005E1960 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41F2EF80259BB856005E1960 /* Main.storyboard */; };
 		41FB886425600BEF00377F8A /* VerticallyCenteredTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 41FB886325600BEF00377F8A /* VerticallyCenteredTextFieldCell.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41599ED9259E4F97000A2BBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41751F9F254C6A95000B1398 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41751FA6254C6A95000B1398;
+			remoteInfo = Surf;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4127C52325603FD6002C1057 /* ClickableTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickableTableView.h; sourceTree = "<group>"; };
@@ -38,6 +49,9 @@
 		4136A124259CEE7B003B5B35 /* AccessibilityHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessibilityHelper.m; sourceTree = "<group>"; };
 		4136A129259D0CB9003B5B35 /* AboutController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutController.h; sourceTree = "<group>"; };
 		4136A12A259D0CBA003B5B35 /* AboutController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutController.m; sourceTree = "<group>"; };
+		41599ED4259E4F97000A2BBC /* SurfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41599ED6259E4F97000A2BBC /* PreferencesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesTests.m; sourceTree = "<group>"; };
+		41599ED8259E4F97000A2BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		416B53862556E35B00766B82 /* EventTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTap.h; sourceTree = "<group>"; };
 		416B53872556E35B00766B82 /* EventTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTap.m; sourceTree = "<group>"; };
 		41751FA7254C6A95000B1398 /* Surf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		41599ED1259E4F97000A2BBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41751FA4254C6A95000B1398 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,10 +109,20 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		41599ED5259E4F97000A2BBC /* SurfTests */ = {
+			isa = PBXGroup;
+			children = (
+				41599ED6259E4F97000A2BBC /* PreferencesTests.m */,
+				41599ED8259E4F97000A2BBC /* Info.plist */,
+			);
+			path = SurfTests;
+			sourceTree = "<group>";
+		};
 		41751F9E254C6A95000B1398 = {
 			isa = PBXGroup;
 			children = (
 				41751FA9254C6A95000B1398 /* Surf */,
+				41599ED5259E4F97000A2BBC /* SurfTests */,
 				41751FA8254C6A95000B1398 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				41751FA7254C6A95000B1398 /* Surf.app */,
+				41599ED4259E4F97000A2BBC /* SurfTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +160,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		41599ED3259E4F97000A2BBC /* SurfTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41599EDD259E4F97000A2BBC /* Build configuration list for PBXNativeTarget "SurfTests" */;
+			buildPhases = (
+				41599ED0259E4F97000A2BBC /* Sources */,
+				41599ED1259E4F97000A2BBC /* Frameworks */,
+				41599ED2259E4F97000A2BBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41599EDA259E4F97000A2BBC /* PBXTargetDependency */,
+			);
+			name = SurfTests;
+			productName = SurfTests;
+			productReference = 41599ED4259E4F97000A2BBC /* SurfTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		41751FA6254C6A95000B1398 /* Surf */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41751FD1254C6A9B000B1398 /* Build configuration list for PBXNativeTarget "Surf" */;
@@ -153,6 +203,10 @@
 			attributes = {
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
+					41599ED3259E4F97000A2BBC = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 41751FA6254C6A95000B1398;
+					};
 					41751FA6254C6A95000B1398 = {
 						CreatedOnToolsVersion = 12.1;
 					};
@@ -172,11 +226,19 @@
 			projectRoot = "";
 			targets = (
 				41751FA6254C6A95000B1398 /* Surf */,
+				41599ED3259E4F97000A2BBC /* SurfTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		41599ED2259E4F97000A2BBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41751FA5254C6A95000B1398 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,6 +255,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		41599ED0259E4F97000A2BBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41599ED7259E4F97000A2BBC /* PreferencesTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41751FA3254C6A95000B1398 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,6 +282,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		41599EDA259E4F97000A2BBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41751FA6254C6A95000B1398 /* Surf */;
+			targetProxy = 41599ED9259E4F97000A2BBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		41F2EF80259BB856005E1960 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -224,6 +302,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		41599EDB259E4F97000A2BBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SurfTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.surf.SurfTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Surf.app/Contents/MacOS/Surf";
+			};
+			name = Debug;
+		};
+		41599EDC259E4F97000A2BBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SurfTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.surf.SurfTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Surf.app/Contents/MacOS/Surf";
+			};
+			name = Release;
+		};
 		41751FCF254C6A9B000B1398 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -381,6 +495,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		41599EDD259E4F97000A2BBC /* Build configuration list for PBXNativeTarget "SurfTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41599EDB259E4F97000A2BBC /* Debug */,
+				41599EDC259E4F97000A2BBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		41751FA2254C6A95000B1398 /* Build configuration list for PBXProject "Surf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

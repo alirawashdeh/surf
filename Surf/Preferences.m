@@ -15,7 +15,7 @@ NSArray *excludedApps;
 + (void) init {
     excludedApps = [[NSUserDefaults standardUserDefaults] objectForKey:@"ExcludedApps"];
     if(excludedApps == nil){
-        excludedApps = @[@"com.tinyspeck.slackmacgap", @"WhatsApp", @"com.apple.dt.Xcode"];
+        [self resetPreferences];
     }
   }
 
@@ -50,5 +50,10 @@ NSArray *excludedApps;
     return result;
 }
 
+
++ (void)resetPreferences{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ExcludedApps"];
+    excludedApps = @[@"com.tinyspeck.slackmacgap", @"WhatsApp", @"com.apple.dt.Xcode"];
+}
 
 @end

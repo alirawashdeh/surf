@@ -13,5 +13,6 @@
 + (void)setExcludedApps:(NSString*) string;
 + (BOOL)isAppExcluded:(NSString*) appName;
 + (void)init;
++ (void)resetPreferences;
 
 @end
