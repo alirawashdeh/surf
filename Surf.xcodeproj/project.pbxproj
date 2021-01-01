@@ -15,6 +15,8 @@
 		4136A125259CEE7B003B5B35 /* AccessibilityHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4136A124259CEE7B003B5B35 /* AccessibilityHelper.m */; };
 		4136A12B259D0CBA003B5B35 /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4136A12A259D0CBA003B5B35 /* AboutController.m */; };
 		41599ED7259E4F97000A2BBC /* PreferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41599ED6259E4F97000A2BBC /* PreferencesTests.m */; };
+		41599EE3259F4F7A000A2BBC /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 41599EE2259F4F7A000A2BBC /* DataHelper.m */; };
+		41599EEC259F5263000A2BBC /* DataHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41599EEB259F5263000A2BBC /* DataHelperTests.m */; };
 		416B53882556E35B00766B82 /* EventTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 416B53872556E35B00766B82 /* EventTap.m */; };
 		41751FAC254C6A95000B1398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41751FAB254C6A95000B1398 /* AppDelegate.m */; };
 		41751FB7254C6A9B000B1398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41751FB6254C6A9B000B1398 /* main.m */; };
@@ -52,6 +54,9 @@
 		41599ED4259E4F97000A2BBC /* SurfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41599ED6259E4F97000A2BBC /* PreferencesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesTests.m; sourceTree = "<group>"; };
 		41599ED8259E4F97000A2BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41599EE2259F4F7A000A2BBC /* DataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
+		41599EE6259F4F85000A2BBC /* DataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
+		41599EEB259F5263000A2BBC /* DataHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHelperTests.m; sourceTree = "<group>"; };
 		416B53862556E35B00766B82 /* EventTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTap.h; sourceTree = "<group>"; };
 		416B53872556E35B00766B82 /* EventTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTap.m; sourceTree = "<group>"; };
 		41751FA7254C6A95000B1398 /* Surf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				41599ED6259E4F97000A2BBC /* PreferencesTests.m */,
+				41599EEB259F5263000A2BBC /* DataHelperTests.m */,
 				41599ED8259E4F97000A2BBC /* Info.plist */,
 			);
 			path = SurfTests;
@@ -151,6 +157,8 @@
 				41751FB6254C6A9B000B1398 /* main.m */,
 				4136A11C259C9F1D003B5B35 /* Preferences.h */,
 				4136A119259C9F09003B5B35 /* Preferences.m */,
+				41599EE6259F4F85000A2BBC /* DataHelper.h */,
+				41599EE2259F4F7A000A2BBC /* DataHelper.m */,
 				41751FB8254C6A9B000B1398 /* Surf.entitlements */,
 				4136A109259C93A3003B5B35 /* UI */,
 			);
@@ -260,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41599ED7259E4F97000A2BBC /* PreferencesTests.m in Sources */,
+				41599EEC259F5263000A2BBC /* DataHelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +285,7 @@
 				41FB886425600BEF00377F8A /* VerticallyCenteredTextFieldCell.m in Sources */,
 				4136A125259CEE7B003B5B35 /* AccessibilityHelper.m in Sources */,
 				4136A115259C945E003B5B35 /* PreferencesController.m in Sources */,
+				41599EE3259F4F7A000A2BBC /* DataHelper.m in Sources */,
 				41751FAC254C6A95000B1398 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

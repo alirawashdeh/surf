@@ -13,6 +13,7 @@
 #import <Foundation/Foundation.h>
 #import "Preferences.h"
 #import "AccessibilityHelper.h"
+#import "DataHelper.h"
 
 @interface AppDelegate ()
 
@@ -65,6 +66,7 @@ EventTap *tap;
 
         window = [[NSWindow alloc] initWithContentRect:NSZeroRect styleMask:NSWindowStyleMaskBorderless backing:NSBackingStoreBuffered defer:NO];
         [Preferences init];
+        [DataHelper init];
         [self createStatusBarIconAndMenu];
 
         myView = [[EmojiSelectController alloc]

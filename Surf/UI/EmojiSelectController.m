@@ -7,6 +7,7 @@
 
 #import "EmojiSelectController.h"
 #import "ClickableTableView.h"
+#import "DataHelper.h"
 
 @interface EmojiSelectController ()
 
@@ -21,7 +22,6 @@ NSArray *_emojiList;
 NSDictionary *emojiData;
 id closureCallbackObject;
 SEL closureCallback;
-NSDictionary *dict;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,7 +30,6 @@ NSDictionary *dict;
     _tableView.refusesFirstResponder = TRUE;
     _tableView.rowHeight = NSTableViewRowSizeStyleCustom;
     [_tableView setRowHeight:25];
-    dict = [self JSONFromFile];
 }
 
 - (NSArray *)emojiList {
@@ -139,60 +138,11 @@ NSDictionary *dict;
     
     if((_topLabel != Nil) && (_topLabel.stringValue.length > 0))
     {
-        for (NSDictionary *item in dict) {
-            NSString *name = [item objectForKey:@"short_name"];
-            NSString *unified = [item objectForKey:@"unified"];
-            NSArray *allNames = [item objectForKey:@"short_names"];
-            NSArray *allKeywords = [item objectForKey:@"keywords"];
-            NSString *addedIn = [item objectForKey:@"added_in"];
-            NSDecimalNumber *decimal = [NSDecimalNumber decimalNumberWithString:addedIn];
-            if([decimal compare:[NSNumber numberWithInt:13]] == NSOrderedAscending)
-            {
-                BOOL found = false;
-                for (NSString *nameItem in allNames) {
-                    {
-                        if([nameItem containsString:[_topLabel.stringValue substringFromIndex:1 ]])
-                        {
-                            found = true;
-                        }
-                    }
-                }
-                for (NSString *keyword in allKeywords) {
-                    {
-                        if([keyword containsString:[_topLabel.stringValue substringFromIndex:1 ]])
-                        {
-                            found = true;
-                        }
-                    }
-                }
-                if(found)
-                {
-                    NSArray *hexcodes = [unified componentsSeparatedByString:@"-"];
-                    NSMutableString *emoji = [NSMutableString stringWithCapacity:50];
-                    
-                    for(int i = 0; i < [hexcodes count]; i++)
-                    {
-                        int value = 0;
-                        sscanf([hexcodes[i] cStringUsingEncoding:NSUTF8StringEncoding], "%x", &value);
-                        uint32_t data = OSSwapHostToLittleInt32(value); // Convert to little-endian
-                        NSString *str = [[NSString alloc] initWithBytes:&data length:4 encoding:NSUTF32LittleEndianStringEncoding];
-                        [emoji appendString:[NSString stringWithFormat:@"%@",str]];
-                    }
-                    [mutableList addObject:[NSString stringWithFormat:@"%@ :%@:", emoji,name]];
-                }
-            }
-        }
+        mutableList = [DataHelper getMatchingEmoji:_topLabel.stringValue];
     }
-    
     _emojiList = [NSArray arrayWithArray:mutableList];
 }
 
-- (NSDictionary *)JSONFromFile
-{
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"emoji-withkeywords" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-}
 
 - (NSString *) leftPadString:(NSString *)s withPadding:(NSString *)padding {
     NSString *padded = [padding stringByAppendingString:s];
