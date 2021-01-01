@@ -235,6 +235,7 @@ EventTap *tap;
                     case keyCodeDelete:
                     case keyCodeSpace:
                     case keyCodeTab:
+                    case keyCodeSlash:
                         break;
                     default:
                         if ([Preferences isAppExcluded:[self getFrontmostApp]])
