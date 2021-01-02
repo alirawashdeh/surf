@@ -14,5 +14,6 @@
 + (BOOL)isAppExcluded:(NSString*) appName;
 + (void)init;
 + (void)resetPreferences;
-
++ (void)setLoginLaunchEnabled:(BOOL) value;
++ (BOOL)isLoginLaunchEnabled;
 @end

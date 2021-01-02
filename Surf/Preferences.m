@@ -7,20 +7,28 @@
 
 #import "Preferences.h"
 #import <Foundation/Foundation.h>
+#import <ServiceManagement/ServiceManagement.h>
 
 NSArray *excludedApps;
+BOOL launchAtLogin;
 
 @implementation Preferences
 
 + (void) init {
     excludedApps = [[NSUserDefaults standardUserDefaults] objectForKey:@"ExcludedApps"];
+    launchAtLogin = [[NSUserDefaults standardUserDefaults] boolForKey:@"LaunchAtLogin"];
     if(excludedApps == nil){
         [self resetPreferences];
     }
   }
 
++ (void)resetPreferences{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ExcludedApps"];
+    excludedApps = @[@"com.tinyspeck.slackmacgap", @"WhatsApp", @"com.apple.dt.Xcode"];
+    [self setLoginLaunchEnabled:true];
+}
+
 + (NSString*)getExcludedAppsText{
-    
     NSMutableString *outputString = [[NSMutableString alloc]init];
     for (int i = 0; i < [excludedApps count]; i++)
     {
@@ -50,10 +58,14 @@ NSArray *excludedApps;
     return result;
 }
 
++ (BOOL)isLoginLaunchEnabled{
+    return launchAtLogin;
+}
 
-+ (void)resetPreferences{
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ExcludedApps"];
-    excludedApps = @[@"com.tinyspeck.slackmacgap", @"WhatsApp", @"com.apple.dt.Xcode"];
++ (void)setLoginLaunchEnabled:(BOOL) value{
+    [[NSUserDefaults standardUserDefaults] setBool:value forKey:@"LaunchAtLogin"];
+    SMLoginItemSetEnabled((__bridge CFStringRef)@"com.surf.SurfLoginLauncher", value);
+    launchAtLogin = value;
 }
 
 @end

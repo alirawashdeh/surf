@@ -17,6 +17,12 @@
 		41599ED7259E4F97000A2BBC /* PreferencesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41599ED6259E4F97000A2BBC /* PreferencesTests.m */; };
 		41599EE3259F4F7A000A2BBC /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 41599EE2259F4F7A000A2BBC /* DataHelper.m */; };
 		41599EEC259F5263000A2BBC /* DataHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41599EEB259F5263000A2BBC /* DataHelperTests.m */; };
+		41599F3E25A113DD000A2BBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41599F3D25A113DD000A2BBC /* AppDelegate.m */; };
+		41599F4325A113DE000A2BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41599F4225A113DE000A2BBC /* Assets.xcassets */; };
+		41599F4625A113DE000A2BBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41599F4425A113DE000A2BBC /* Main.storyboard */; };
+		41599F4925A113DE000A2BBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41599F4825A113DE000A2BBC /* main.m */; };
+		41599F5425A114BE000A2BBC /* SurfLoginLauncher.app in Copy SurfLoginLauncher */ = {isa = PBXBuildFile; fileRef = 41599F3A25A113DD000A2BBC /* SurfLoginLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		41599F5A25A115D7000A2BBC /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41599F5925A115D7000A2BBC /* ServiceManagement.framework */; };
 		416B53882556E35B00766B82 /* EventTap.m in Sources */ = {isa = PBXBuildFile; fileRef = 416B53872556E35B00766B82 /* EventTap.m */; };
 		41751FAC254C6A95000B1398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41751FAB254C6A95000B1398 /* AppDelegate.m */; };
 		41751FB7254C6A9B000B1398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41751FB6254C6A9B000B1398 /* main.m */; };
@@ -38,6 +44,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		41599F2D25A111D0000A2BBC /* Copy SurfLoginLauncher */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				41599F5425A114BE000A2BBC /* SurfLoginLauncher.app in Copy SurfLoginLauncher */,
+			);
+			name = "Copy SurfLoginLauncher";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4127C52325603FD6002C1057 /* ClickableTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickableTableView.h; sourceTree = "<group>"; };
 		4127C52425603FD6002C1057 /* ClickableTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickableTableView.m; sourceTree = "<group>"; };
@@ -57,6 +77,15 @@
 		41599EE2259F4F7A000A2BBC /* DataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
 		41599EE6259F4F85000A2BBC /* DataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
 		41599EEB259F5263000A2BBC /* DataHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataHelperTests.m; sourceTree = "<group>"; };
+		41599F3A25A113DD000A2BBC /* SurfLoginLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurfLoginLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41599F3C25A113DD000A2BBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		41599F3D25A113DD000A2BBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		41599F4225A113DE000A2BBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41599F4525A113DE000A2BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		41599F4725A113DE000A2BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41599F4825A113DE000A2BBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		41599F4A25A113DE000A2BBC /* SurfLoginLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SurfLoginLauncher.entitlements; sourceTree = "<group>"; };
+		41599F5925A115D7000A2BBC /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		416B53862556E35B00766B82 /* EventTap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTap.h; sourceTree = "<group>"; };
 		416B53872556E35B00766B82 /* EventTap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventTap.m; sourceTree = "<group>"; };
 		41751FA7254C6A95000B1398 /* Surf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surf.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,10 +112,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		41599F3725A113DD000A2BBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		41751FA4254C6A95000B1398 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41599F5A25A115D7000A2BBC /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,12 +161,36 @@
 			path = SurfTests;
 			sourceTree = "<group>";
 		};
+		41599F3B25A113DD000A2BBC /* SurfLoginLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				41599F3C25A113DD000A2BBC /* AppDelegate.h */,
+				41599F3D25A113DD000A2BBC /* AppDelegate.m */,
+				41599F4225A113DE000A2BBC /* Assets.xcassets */,
+				41599F4425A113DE000A2BBC /* Main.storyboard */,
+				41599F4725A113DE000A2BBC /* Info.plist */,
+				41599F4825A113DE000A2BBC /* main.m */,
+				41599F4A25A113DE000A2BBC /* SurfLoginLauncher.entitlements */,
+			);
+			path = SurfLoginLauncher;
+			sourceTree = "<group>";
+		};
+		41599F5825A115D7000A2BBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41599F5925A115D7000A2BBC /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		41751F9E254C6A95000B1398 = {
 			isa = PBXGroup;
 			children = (
 				41751FA9254C6A95000B1398 /* Surf */,
 				41599ED5259E4F97000A2BBC /* SurfTests */,
+				41599F3B25A113DD000A2BBC /* SurfLoginLauncher */,
 				41751FA8254C6A95000B1398 /* Products */,
+				41599F5825A115D7000A2BBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +199,7 @@
 			children = (
 				41751FA7254C6A95000B1398 /* Surf.app */,
 				41599ED4259E4F97000A2BBC /* SurfTests.xctest */,
+				41599F3A25A113DD000A2BBC /* SurfLoginLauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +248,23 @@
 			productReference = 41599ED4259E4F97000A2BBC /* SurfTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		41599F3925A113DD000A2BBC /* SurfLoginLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41599F4B25A113DE000A2BBC /* Build configuration list for PBXNativeTarget "SurfLoginLauncher" */;
+			buildPhases = (
+				41599F3625A113DD000A2BBC /* Sources */,
+				41599F3725A113DD000A2BBC /* Frameworks */,
+				41599F3825A113DD000A2BBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SurfLoginLauncher;
+			productName = SurfLoginLauncher;
+			productReference = 41599F3A25A113DD000A2BBC /* SurfLoginLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
 		41751FA6254C6A95000B1398 /* Surf */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41751FD1254C6A9B000B1398 /* Build configuration list for PBXNativeTarget "Surf" */;
@@ -193,6 +272,7 @@
 				41751FA3254C6A95000B1398 /* Sources */,
 				41751FA4254C6A95000B1398 /* Frameworks */,
 				41751FA5254C6A95000B1398 /* Resources */,
+				41599F2D25A111D0000A2BBC /* Copy SurfLoginLauncher */,
 			);
 			buildRules = (
 			);
@@ -215,6 +295,9 @@
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = 41751FA6254C6A95000B1398;
 					};
+					41599F3925A113DD000A2BBC = {
+						CreatedOnToolsVersion = 12.3;
+					};
 					41751FA6254C6A95000B1398 = {
 						CreatedOnToolsVersion = 12.1;
 					};
@@ -235,6 +318,7 @@
 			targets = (
 				41751FA6254C6A95000B1398 /* Surf */,
 				41599ED3259E4F97000A2BBC /* SurfTests */,
+				41599F3925A113DD000A2BBC /* SurfLoginLauncher */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +328,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41599F3825A113DD000A2BBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41599F4325A113DE000A2BBC /* Assets.xcassets in Resources */,
+				41599F4625A113DE000A2BBC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +362,15 @@
 			files = (
 				41599ED7259E4F97000A2BBC /* PreferencesTests.m in Sources */,
 				41599EEC259F5263000A2BBC /* DataHelperTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41599F3625A113DD000A2BBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41599F4925A113DE000A2BBC /* main.m in Sources */,
+				41599F3E25A113DD000A2BBC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +403,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		41599F4425A113DE000A2BBC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41599F4525A113DE000A2BBC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		41F2EF80259BB856005E1960 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,6 +455,43 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.surf.SurfTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Surf.app/Contents/MacOS/Surf";
+			};
+			name = Release;
+		};
+		41599F4C25A113DE000A2BBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SurfLoginLauncher/SurfLoginLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SurfLoginLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.surf.SurfLoginLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		41599F4D25A113DE000A2BBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SurfLoginLauncher/SurfLoginLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SurfLoginLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.surf.SurfLoginLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -490,8 +637,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Surf/Surf.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Surf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,6 +648,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.surf.Surf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -510,6 +660,15 @@
 			buildConfigurations = (
 				41599EDB259E4F97000A2BBC /* Debug */,
 				41599EDC259E4F97000A2BBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41599F4B25A113DE000A2BBC /* Build configuration list for PBXNativeTarget "SurfLoginLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41599F4C25A113DE000A2BBC /* Debug */,
+				41599F4D25A113DE000A2BBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

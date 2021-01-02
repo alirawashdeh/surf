@@ -29,6 +29,8 @@
 - (void)testDefaultPreferences {
     NSString *excludedAppsTest = [Preferences getExcludedAppsText];
     XCTAssertTrue([excludedAppsTest isEqualTo:@"com.tinyspeck.slackmacgap\nWhatsApp\ncom.apple.dt.Xcode"]);
+    Boolean launchAtLogin = [Preferences isLoginLaunchEnabled];
+    XCTAssertTrue(launchAtLogin == true);
 }
 
 - (void)testIsAppExcluded {
@@ -36,10 +38,17 @@
     XCTAssertFalse([Preferences isAppExcluded:@"NotInTheList"]);
 }
 
-- (void)testSettingPreferences {
+- (void)testSettingExcludedApps {
     [Preferences setExcludedApps:@"test1\ntest2"];
     NSString *excludedAppsTest = [Preferences getExcludedAppsText];
     XCTAssertTrue([excludedAppsTest isEqualTo:@"test1\ntest2"]);
+}
+
+- (void)testSettingLaunchAtLogin {
+    [Preferences setLoginLaunchEnabled:false];
+    XCTAssertFalse([Preferences isLoginLaunchEnabled]);
+    [Preferences setLoginLaunchEnabled:true];
+    XCTAssertTrue([Preferences isLoginLaunchEnabled]);
 }
 
 @end
