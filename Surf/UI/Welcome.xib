@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="WelcomeController">
+            <connections>
+                <outlet property="preferencesTab" destination="yhi-lM-VA7" id="Ffb-h4-IaF"/>
+                <outlet property="tabView" destination="te2-Qf-0QS" id="INY-GU-5ot"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Surf" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="533" height="346"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="533" height="346"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <tabView type="noTabsBezelBorder" translatesAutoresizingMaskIntoConstraints="NO" id="te2-Qf-0QS">
+                        <rect key="frame" x="14" y="16" width="506" height="319"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="Welcome" identifier="" id="OnY-B4-2J8">
+                                <view key="view" id="bZD-Sh-UQo">
+                                    <rect key="frame" x="10" y="7" width="486" height="299"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5kL-lS-efw" userLabel="Heading">
+                                            <rect key="frame" x="117" y="227" width="252" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="248" id="Oxi-yI-1Kq"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Welcome 👋" id="DU9-FH-Qyb">
+                                                <font key="font" metaFont="systemBold" size="44"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4pR-Tc-9rW" userLabel="Subheading">
+                                            <rect key="frame" x="76" y="163" width="335" height="44"/>
+                                            <textFieldCell key="cell" alignment="center" title="You're all set up now, so get ready to supercharge your emoji ⚡️" id="ds0-dC-fVf">
+                                                <font key="font" metaFont="systemBold" size="19"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1v-ti-XbE" userLabel="Instruction">
+                                            <rect key="frame" x="26" y="65" width="435" height="66"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="66" id="tcR-4U-P9M"/>
+                                            </constraints>
+                                            <textFieldCell key="cell" alignment="center" title="Type something like :ocean: (🌊) or :surfer: (🏄‍♀️) in any application to quickly insert an emoji 🤙 " allowsEditingTextAttributes="YES" id="6fO-mb-N07">
+                                                <font key="font" metaFont="system" size="19"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4NF-D6-hqM">
+                                            <rect key="frame" x="27" y="17" width="432" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="420" id="01s-Wz-ik1"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="b1b-ds-GMc">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="nextClick:" target="-2" id="ak3-DR-scE"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="4pR-Tc-9rW" firstAttribute="leading" secondItem="bZD-Sh-UQo" secondAttribute="leading" constant="78" id="DQs-HK-w24"/>
+                                        <constraint firstItem="4pR-Tc-9rW" firstAttribute="top" secondItem="5kL-lS-efw" secondAttribute="bottom" constant="20" id="DhC-uv-eXq"/>
+                                        <constraint firstItem="5kL-lS-efw" firstAttribute="top" secondItem="bZD-Sh-UQo" secondAttribute="top" constant="20" id="XtF-01-WKi"/>
+                                        <constraint firstItem="e1v-ti-XbE" firstAttribute="leading" secondItem="bZD-Sh-UQo" secondAttribute="leading" constant="28" id="bMR-tm-yaw"/>
+                                        <constraint firstItem="e1v-ti-XbE" firstAttribute="top" secondItem="4pR-Tc-9rW" secondAttribute="bottom" constant="32" id="bsP-Y2-lao"/>
+                                        <constraint firstItem="5kL-lS-efw" firstAttribute="centerX" secondItem="4pR-Tc-9rW" secondAttribute="centerX" id="dNw-VC-zmw"/>
+                                        <constraint firstItem="4pR-Tc-9rW" firstAttribute="centerX" secondItem="e1v-ti-XbE" secondAttribute="centerX" id="g8t-25-VT7"/>
+                                        <constraint firstItem="4NF-D6-hqM" firstAttribute="leading" secondItem="bZD-Sh-UQo" secondAttribute="leading" constant="33" id="l1i-YB-ijA"/>
+                                        <constraint firstItem="5kL-lS-efw" firstAttribute="centerX" secondItem="bZD-Sh-UQo" secondAttribute="centerX" id="q6S-NP-62b"/>
+                                        <constraint firstItem="e1v-ti-XbE" firstAttribute="centerX" secondItem="4NF-D6-hqM" secondAttribute="centerX" id="rkW-NK-fGr"/>
+                                        <constraint firstItem="4NF-D6-hqM" firstAttribute="top" secondItem="e1v-ti-XbE" secondAttribute="bottom" constant="20" id="yas-kv-4hy"/>
+                                    </constraints>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Preferences" identifier="" id="yhi-lM-VA7">
+                                <view key="view" id="gc7-RX-8Zd">
+                                    <rect key="frame" x="10" y="7" width="486" height="299"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ip7-Ys-avq" userLabel="Heading">
+                                            <rect key="frame" x="54" y="227" width="378" height="52"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="One more thing ☝️" id="y4l-Ww-Cc0">
+                                                <font key="font" metaFont="systemBold" size="44"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRu-D5-dhf" userLabel="Subheading">
+                                            <rect key="frame" x="76" y="159" width="335" height="44"/>
+                                            <textFieldCell key="cell" alignment="center" title="To access preferences, click on the Surf icon in the status bar 🏄‍♂️" id="tx7-y7-ofI">
+                                                <font key="font" metaFont="systemBold" size="19"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rtc-Oe-gj2">
+                                            <rect key="frame" x="27" y="5" width="432" height="56"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="45" id="bTX-Zr-JLi"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="push" title="Finish" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Pfq-rh-yss">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="finishClick:" target="-2" id="CnI-Eg-LNu"/>
+                                            </connections>
+                                        </button>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4XI-kt-5hT">
+                                            <rect key="frame" x="114" y="77" width="258" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="302" id="Ipy-WM-pzr"/>
+                                                <constraint firstAttribute="height" constant="68" id="vLs-T4-FiT"/>
+                                            </constraints>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="menu-example" id="s37-0g-pad"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ip7-Ys-avq" firstAttribute="centerX" secondItem="kRu-D5-dhf" secondAttribute="centerX" id="63e-7c-BYn"/>
+                                        <constraint firstItem="ip7-Ys-avq" firstAttribute="top" secondItem="gc7-RX-8Zd" secondAttribute="top" constant="20" id="CgU-Vs-enZ"/>
+                                        <constraint firstItem="kRu-D5-dhf" firstAttribute="centerX" secondItem="4XI-kt-5hT" secondAttribute="centerX" id="CoF-gB-wTG"/>
+                                        <constraint firstItem="4XI-kt-5hT" firstAttribute="top" secondItem="kRu-D5-dhf" secondAttribute="bottom" constant="20" id="FnO-2t-tGP"/>
+                                        <constraint firstItem="ip7-Ys-avq" firstAttribute="centerX" secondItem="gc7-RX-8Zd" secondAttribute="centerX" id="IO7-8M-ehN"/>
+                                        <constraint firstItem="kRu-D5-dhf" firstAttribute="leading" secondItem="gc7-RX-8Zd" secondAttribute="leading" constant="78" id="Nec-nX-byB"/>
+                                        <constraint firstItem="rtc-Oe-gj2" firstAttribute="leading" secondItem="gc7-RX-8Zd" secondAttribute="leading" constant="33" id="U7V-fp-Ba2"/>
+                                        <constraint firstItem="4XI-kt-5hT" firstAttribute="centerX" secondItem="rtc-Oe-gj2" secondAttribute="centerX" id="fa4-dh-Sf4"/>
+                                        <constraint firstItem="kRu-D5-dhf" firstAttribute="top" secondItem="ip7-Ys-avq" secondAttribute="bottom" constant="24" id="hcH-Jy-lUk"/>
+                                        <constraint firstItem="4XI-kt-5hT" firstAttribute="leading" secondItem="gc7-RX-8Zd" secondAttribute="leading" constant="92" id="ngf-ai-r6D"/>
+                                        <constraint firstItem="rtc-Oe-gj2" firstAttribute="top" secondItem="4XI-kt-5hT" secondAttribute="bottom" constant="14" id="vW1-Rl-8KV"/>
+                                    </constraints>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="te2-Qf-0QS" secondAttribute="bottom" constant="20" symbolic="YES" id="2dZ-uW-D8K"/>
+                    <constraint firstItem="te2-Qf-0QS" firstAttribute="centerX" secondItem="se5-gp-TjO" secondAttribute="centerX" id="lRW-DE-DDj"/>
+                    <constraint firstItem="te2-Qf-0QS" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="13" id="qfz-XG-WdO"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="38.5" y="140"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="menu-example" width="990" height="206"/>
+    </resources>
+</document>

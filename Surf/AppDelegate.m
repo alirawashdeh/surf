@@ -10,6 +10,7 @@
 #import "EventTap.h"
 #import "PreferencesController.h"
 #import "AboutController.h"
+#import "WelcomeController.h"
 #import <Foundation/Foundation.h>
 #import "Preferences.h"
 #import "AccessibilityHelper.h"
@@ -24,11 +25,13 @@
 NSStatusItem *statusItem;
 NSPopover *popover;
 Boolean shown = FALSE;
+Boolean accessibilityEnabledInitially = true;
 
 NSWindow* window;
 EmojiSelectController *myView;
 AboutController *aboutWindowController;
 PreferencesController *preferencesWindowController;
+WelcomeController *welcomeWindowController;
 
 BOOL lastKeyPressColon = false;
 pid_t pid;
@@ -38,6 +41,7 @@ EventTap *tap;
 
     if(AXIsProcessTrusted() == false)
     {
+        accessibilityEnabledInitially = false;
         NSAlert *alert = [[NSAlert alloc] init];
         [alert setAlertStyle:NSAlertStyleCritical];
         [alert setMessageText:@"Turn on accessibility"];
@@ -48,9 +52,12 @@ EventTap *tap;
         NSString* prefPage = @"x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility";
         [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:prefPage]];
     }
+    else
+    {
+        accessibilityEnabledInitially = true;
+    }
     
     [self checkAccessibilityAndInitialise];
-    
 }
 
 - (void)checkAccessibilityAndInitialise
@@ -61,6 +68,9 @@ EventTap *tap;
     }
     else
     {
+        if(!accessibilityEnabledInitially){
+            [self showWelcomeWindow];
+        }
         tap = [[EventTap alloc] initWithCallback:self withSelector:@selector(keypress:)];
         [tap enable];
 
@@ -164,6 +174,26 @@ EventTap *tap;
     preferencesWindowController = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowWillCloseNotification object:window];
     [NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
+}
+
+
+-(void)showWelcomeWindow{
+if( welcomeWindowController == nil )
+{
+    welcomeWindowController = [[WelcomeController alloc] initWithWindowNibName:@"Welcome"];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(welcomeWindowClose:) name:NSWindowWillCloseNotification object:welcomeWindowController.window];
+}
+[welcomeWindowController.window makeKeyAndOrderFront:self];
+[welcomeWindowController showWindow:self];
+[NSApp setActivationPolicy:NSApplicationActivationPolicyRegular];
+[NSApp activateIgnoringOtherApps:YES];
+}
+
+- (void)welcomeWindowClose:(NSNotification *)notification
+{
+    welcomeWindowController = nil;
+[[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowWillCloseNotification object:window];
+[NSApp setActivationPolicy:NSApplicationActivationPolicyAccessory];
 }
 
 -(BOOL)keypress:(NSEvent *)nsevent {
