@@ -41,7 +41,7 @@ NSDictionary* dict2;
                 BOOL keywordMatch = false;
                 for (NSString *nameItem in allNames) {
                     {
-                        if([nameItem containsString:[string substringFromIndex:1 ]])
+                        if([self shortNameStringMatch:string checkIn:nameItem])
                         {
                             exactMatch = true;
                         }
@@ -97,6 +97,23 @@ NSDictionary* dict2;
         }
     }
     return uniqueValues;
+}
+
++ (BOOL)shortNameStringMatch:(NSString*) inputString checkIn:(NSString*)comparisonString{
+    NSString* substring = [inputString substringFromIndex:1 ];
+    if([comparisonString containsString:substring])
+    {
+        return true;
+    }
+    if([comparisonString containsString:[substring stringByReplacingOccurrencesOfString:@" " withString:@"_"]])
+    {
+        return true;
+    }
+    if([comparisonString containsString:[substring stringByReplacingOccurrencesOfString:@"-" withString:@"_"]])
+    {
+        return true;
+    }
+    return false;
 }
 
 @end
