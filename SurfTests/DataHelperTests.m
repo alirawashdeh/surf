@@ -30,6 +30,10 @@
     XCTAssertTrue([nomatch count] == 0);
     NSMutableArray* onecharMatch = [DataHelper getMatchingEmoji:@":"];
     XCTAssertTrue([onecharMatch count] == 0);
+    NSMutableArray* spaceMatch = [DataHelper getMatchingEmoji:@":racing car"];
+    XCTAssertTrue([spaceMatch[0] isEqualTo:@"🏎️ :racing_car:"]);
+    NSMutableArray* dashMatch = [DataHelper getMatchingEmoji:@":racing-car"];
+    XCTAssertTrue([dashMatch[0] isEqualTo:@"🏎️ :racing_car:"]);
 }
 
 - (void)testResultOrder {
