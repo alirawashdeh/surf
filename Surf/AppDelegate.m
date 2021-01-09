@@ -266,6 +266,10 @@ if( welcomeWindowController == nil )
                     case keyCodeSpace:
                     case keyCodeTab:
                     case keyCodeSlash:
+                    case keyCodeLeftArrow:
+                    case keyCodeRightArrow:
+                    case keyCodeUpArrow:
+                    case keyCodeDownArrow:
                         break;
                     default:
                         if ([Preferences isAppExcluded:[self getFrontmostApp]])
