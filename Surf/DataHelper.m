@@ -8,12 +8,12 @@
 #import "DataHelper.h"
 #import <Foundation/Foundation.h>
 
-NSDictionary* dict2;
+NSDictionary* jsonDict;
 
 @implementation DataHelper
 
 + (void) init {
-    dict2 = [self JSONFromFile];
+    jsonDict = [self JSONFromFile];
   }
 
 + (NSDictionary *)JSONFromFile
@@ -28,7 +28,7 @@ NSDictionary* dict2;
     NSMutableArray *exactMatches = [NSMutableArray array];
     NSMutableArray *keywordMatches = [NSMutableArray array];
     
-        for (NSDictionary *item in dict2) {
+        for (NSDictionary *item in jsonDict) {
             NSString *name = [item objectForKey:@"short_name"];
             NSString *unified = [item objectForKey:@"unified"];
             NSArray *allNames = [item objectForKey:@"short_names"];
