@@ -6,6 +6,7 @@
 //
 
 #import "DataHelper.h"
+#import "Preferences.h"
 #import <Foundation/Foundation.h>
 
 NSDictionary* jsonDict;
@@ -25,8 +26,12 @@ NSDictionary* jsonDict;
 
 + (NSMutableArray*)getMatchingEmoji:(NSString*) string
 {
+    NSDictionary *userDefinedDict = [Preferences getUserDefinedKeywords];
+    
     NSMutableArray *exactMatches = [NSMutableArray array];
+    NSMutableArray *userDefinedKeywordMatches = [NSMutableArray array];
     NSMutableArray *keywordMatches = [NSMutableArray array];
+    
     
         for (NSDictionary *item in jsonDict) {
             NSString *name = [item objectForKey:@"short_name"];
@@ -35,10 +40,26 @@ NSDictionary* jsonDict;
             NSArray *allKeywords = [item objectForKey:@"keywords"];
             NSString *addedIn = [item objectForKey:@"added_in"];
             NSDecimalNumber *decimal = [NSDecimalNumber decimalNumberWithString:addedIn];
+
+            // Check version and search
             if([decimal compare:[NSNumber numberWithInt:13]] == NSOrderedAscending)
             {
+                // Convert hex to emoji
+                NSArray *hexcodes = [unified componentsSeparatedByString:@"-"];
+                NSMutableString *emoji = [NSMutableString stringWithCapacity:50];
+                for(int i = 0; i < [hexcodes count]; i++)
+                {
+                    int value = 0;
+                    sscanf([hexcodes[i] cStringUsingEncoding:NSUTF8StringEncoding], "%x", &value);
+                    uint32_t data = OSSwapHostToLittleInt32(value); // Convert to little-endian
+                    NSString *str = [[NSString alloc] initWithBytes:&data length:4 encoding:NSUTF32LittleEndianStringEncoding];
+                    [emoji appendString:[NSString stringWithFormat:@"%@",str]];
+                }
+                
+                // Check for matches
                 BOOL exactMatch = false;
                 BOOL keywordMatch = false;
+                BOOL userDefinedKeywordMatch = false;
                 for (NSString *nameItem in allNames) {
                     {
                         if([self shortNameStringMatch:string checkIn:nameItem])
@@ -55,19 +76,20 @@ NSDictionary* jsonDict;
                         }
                     }
                 }
-                if(exactMatch || keywordMatch)
+                if(userDefinedDict[emoji] != nil)
                 {
-                    NSArray *hexcodes = [unified componentsSeparatedByString:@"-"];
-                    NSMutableString *emoji = [NSMutableString stringWithCapacity:50];
-                    
-                    for(int i = 0; i < [hexcodes count]; i++)
-                    {
-                        int value = 0;
-                        sscanf([hexcodes[i] cStringUsingEncoding:NSUTF8StringEncoding], "%x", &value);
-                        uint32_t data = OSSwapHostToLittleInt32(value); // Convert to little-endian
-                        NSString *str = [[NSString alloc] initWithBytes:&data length:4 encoding:NSUTF32LittleEndianStringEncoding];
-                        [emoji appendString:[NSString stringWithFormat:@"%@",str]];
+                   NSArray *userKeywords = [[userDefinedDict objectForKey:emoji] componentsSeparatedByString:@","];
+                   for (NSString *userKeyword in userKeywords) {
+                        {
+                            if([userKeyword containsString:[string substringFromIndex:1 ]])
+                            {
+                                userDefinedKeywordMatch = true;
+                            }
+                        }
                     }
+                }
+                if(exactMatch || keywordMatch || userDefinedKeywordMatch)
+                {
                     if(exactMatch)
                     {
                         [exactMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emoji,name]];
@@ -76,11 +98,16 @@ NSDictionary* jsonDict;
                     {
                         [keywordMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emoji,name]];
                     }
+                    if(userDefinedKeywordMatch)
+                    {
+                        [userDefinedKeywordMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emoji,name]];
+                    }
                 }
             }
     }
     
     NSMutableArray *mutableList = [NSMutableArray arrayWithArray:exactMatches];
+    [mutableList addObjectsFromArray: userDefinedKeywordMatches];
     [mutableList addObjectsFromArray: keywordMatches];
     
     return [DataHelper deduplicateArray:mutableList];

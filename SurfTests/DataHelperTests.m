@@ -7,6 +7,7 @@
 
 #import <XCTest/XCTest.h>
 #import "DataHelper.h"
+#import "Preferences.h"
 
 @interface DataHelperTests : XCTestCase
 
@@ -17,6 +18,7 @@
 - (void)setUp {
     // Put setup code here. This method is called before the invocation of each test method in the class.
     [DataHelper init];
+    [Preferences init];
 }
 
 - (void)tearDown {
@@ -34,6 +36,12 @@
     XCTAssertTrue([spaceMatch[0] isEqualTo:@"🏎️ :racing_car:"]);
     NSMutableArray* dashMatch = [DataHelper getMatchingEmoji:@":racing-car"];
     XCTAssertTrue([dashMatch[0] isEqualTo:@"🏎️ :racing_car:"]);
+}
+
+
+- (void)testUserDefinedKeywords {
+    NSMutableArray* match = [DataHelper getMatchingEmoji:@":dino"];
+    XCTAssertTrue([match[0] isEqualTo:@"🦖 :t-rex:"]);
 }
 
 - (void)testResultOrder {

@@ -31,6 +31,14 @@
     XCTAssertTrue([excludedAppsTest isEqualTo:@"com.tinyspeck.slackmacgap\nWhatsApp\ncom.apple.dt.Xcode"]);
     Boolean launchAtLogin = [Preferences isLoginLaunchEnabled];
     XCTAssertTrue(launchAtLogin == true);
+    NSDictionary *userDefinedKeywords = [Preferences getUserDefinedKeywords];
+    XCTAssertTrue([[userDefinedKeywords objectForKey:@"🗑️"] isEqualTo:@"rubbish"]);
+    XCTAssertTrue([[userDefinedKeywords objectForKey:@"🦖"] isEqualTo:@"dino"]);
+}
+
+- (void)testDefaultUserDefinedKeywordsAsText {
+    NSString *userDefinedKeywordsText = [Preferences getUserDefinedKeywordsAsText];
+    XCTAssertTrue([userDefinedKeywordsText isEqualTo:@"🗑️,rubbish\n🦖,dino\n🚨,klaxon"]);
 }
 
 - (void)testIsAppExcluded {
@@ -42,6 +50,12 @@
     [Preferences setExcludedApps:@"test1\ntest2"];
     NSString *excludedAppsTest = [Preferences getExcludedAppsText];
     XCTAssertTrue([excludedAppsTest isEqualTo:@"test1\ntest2"]);
+}
+
+- (void)testSettingUserDefinedKeywordsFromText {
+    [Preferences setUserDefinedKeywords:@"🗑️,rubbish\n🦖,dino\n🚨,blabla"];
+    NSString *userDefinedKeywordsText = [Preferences getUserDefinedKeywordsAsText];
+    XCTAssertTrue([userDefinedKeywordsText isEqualTo:@"🗑️,rubbish\n🦖,dino\n🚨,blabla"]);
 }
 
 - (void)testSettingLaunchAtLogin {

@@ -16,4 +16,9 @@
 + (void)resetPreferences;
 + (void)setLoginLaunchEnabled:(BOOL) value;
 + (BOOL)isLoginLaunchEnabled;
++ (NSMutableDictionary*)getUserDefinedKeywords;
++ (NSString*)getUserDefinedKeywordsAsText;
++ (void)setUserDefinedKeywords:(NSString*) string;
+
+
 @end
