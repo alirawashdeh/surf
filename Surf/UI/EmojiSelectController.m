@@ -8,6 +8,7 @@
 #import "EmojiSelectController.h"
 #import "ClickableTableView.h"
 #import "DataHelper.h"
+#import "Emoji.h"
 
 @interface EmojiSelectController ()
 
@@ -19,7 +20,6 @@
 @implementation EmojiSelectController
 
 NSArray *_emojiList;
-NSDictionary *emojiData;
 id closureCallbackObject;
 SEL closureCallback;
 
@@ -65,13 +65,12 @@ SEL closureCallback;
     func(closureCallbackObject, closureCallback);
 }
 
-
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    return self.emojiList.count;
+    return _emojiList.count;
 }
 
 - (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    return [self.emojiList objectAtIndex:row];
+    return [(Emoji*)[_emojiList objectAtIndex:row] getDisplayString];
 }
 
 - (BOOL)tableView:(NSTableView *)aTableView shouldEditTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
@@ -124,9 +123,8 @@ SEL closureCallback;
     NSInteger row = [_tableView selectedRow];
     if(row >= 0)
     {
-        NSString *str = [self emojiList][row];
-        NSString *firstWord = [[str componentsSeparatedByString:@" "] objectAtIndex:0];
-        return firstWord;
+        Emoji *emoji =[_emojiList objectAtIndex:row];
+        return emoji.emojiChar;
     }
     return Nil;
 }

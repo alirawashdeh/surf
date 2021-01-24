@@ -35,6 +35,7 @@ NSMutableArray *emojiArray;
         [emoji setAllKeywords:[item objectForKey:@"keywords"]];
         NSString *addedIn = [item objectForKey:@"added_in"];
         [emoji setDecimal:[NSDecimalNumber decimalNumberWithString:addedIn]];
+        [emoji setEmojiCharFromUnified:emoji.unified];
         [returnArray addObject:emoji];
     }
     return returnArray;
@@ -48,24 +49,11 @@ NSMutableArray *emojiArray;
     NSMutableArray *userDefinedKeywordMatches = [NSMutableArray array];
     NSMutableArray *keywordMatches = [NSMutableArray array];
     
-    
         for (Emoji *emoji in emojiArray) {
         
             // Check version and search
             if([emoji.decimal compare:[NSNumber numberWithInt:13]] == NSOrderedAscending)
             {
-                // Convert hex to emoji
-                NSArray *hexcodes = [emoji.unified componentsSeparatedByString:@"-"];
-                NSMutableString *emojiChar = [NSMutableString stringWithCapacity:50];
-                for(int i = 0; i < [hexcodes count]; i++)
-                {
-                    int value = 0;
-                    sscanf([hexcodes[i] cStringUsingEncoding:NSUTF8StringEncoding], "%x", &value);
-                    uint32_t data = OSSwapHostToLittleInt32(value); // Convert to little-endian
-                    NSString *str = [[NSString alloc] initWithBytes:&data length:4 encoding:NSUTF32LittleEndianStringEncoding];
-                    [emojiChar appendString:[NSString stringWithFormat:@"%@",str]];
-                }
-                
                 // Check for matches
                 BOOL exactMatch = false;
                 BOOL keywordMatch = false;
@@ -86,9 +74,9 @@ NSMutableArray *emojiArray;
                         }
                     }
                 }
-                if(userDefinedDict[emojiChar] != nil)
+                if(userDefinedDict[emoji.emojiChar] != nil)
                 {
-                   NSArray *userKeywords = [[userDefinedDict objectForKey:emojiChar] componentsSeparatedByString:@","];
+                   NSArray *userKeywords = [[userDefinedDict objectForKey:emoji.emojiChar] componentsSeparatedByString:@","];
                    for (NSString *userKeyword in userKeywords) {
                         {
                             if([userKeyword containsString:[string substringFromIndex:1 ]])
@@ -102,15 +90,15 @@ NSMutableArray *emojiArray;
                 {
                     if(exactMatch)
                     {
-                        [exactMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emojiChar,emoji.shortName]];
+                        [exactMatches addObject:emoji];
                     }
                     if(keywordMatch)
                     {
-                        [keywordMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emojiChar,emoji.shortName]];
+                        [keywordMatches addObject:emoji];
                     }
                     if(userDefinedKeywordMatch)
                     {
-                        [userDefinedKeywordMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emojiChar,emoji.shortName]];
+                        [userDefinedKeywordMatches addObject:emoji];
                     }
                 }
             }
@@ -126,9 +114,19 @@ NSMutableArray *emojiArray;
 + (NSMutableArray*)deduplicateArray:(NSMutableArray*) nonUniqueValues
 {
     NSMutableArray* uniqueValues = [[NSMutableArray alloc] init];
-    for(id e in nonUniqueValues)
+    for(Emoji *e in nonUniqueValues)
     {
-        if(![uniqueValues containsObject:e])
+        BOOL found = false;
+        for(int j = 0; j < uniqueValues.count; j++)
+        {
+            Emoji *unique = uniqueValues[j];
+            if([e compareTo:unique])
+            {
+                found = true;
+                break;
+            }
+        }
+        if(!found)
         {
             [uniqueValues addObject:e];
         }

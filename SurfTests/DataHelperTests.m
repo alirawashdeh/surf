@@ -8,6 +8,7 @@
 #import <XCTest/XCTest.h>
 #import "DataHelper.h"
 #import "Preferences.h"
+#import "Emoji.h"
 
 @interface DataHelperTests : XCTestCase
 
@@ -26,28 +27,38 @@
 }
 
 - (void)testGetMatchingEmoji {
+    Emoji* resultToCheck;
     NSMutableArray* match = [DataHelper getMatchingEmoji:@":t-rex"];
-    XCTAssertTrue([match[0] isEqualTo:@"🦖 :t-rex:"]);
+    resultToCheck = match[0];
+    XCTAssertTrue([[resultToCheck getDisplayString] isEqualTo:@"🦖 :t-rex:"]);
     NSMutableArray* nomatch = [DataHelper getMatchingEmoji:@"asdfasdfasdfdsaadfsa"];
     XCTAssertTrue([nomatch count] == 0);
     NSMutableArray* onecharMatch = [DataHelper getMatchingEmoji:@":"];
     XCTAssertTrue([onecharMatch count] == 0);
     NSMutableArray* spaceMatch = [DataHelper getMatchingEmoji:@":racing car"];
-    XCTAssertTrue([spaceMatch[0] isEqualTo:@"🏎️ :racing_car:"]);
+    resultToCheck = spaceMatch[0];
+    XCTAssertTrue([[resultToCheck getDisplayString] isEqualTo:@"🏎️ :racing_car:"]);
     NSMutableArray* dashMatch = [DataHelper getMatchingEmoji:@":racing-car"];
-    XCTAssertTrue([dashMatch[0] isEqualTo:@"🏎️ :racing_car:"]);
+    resultToCheck = dashMatch[0];
+    XCTAssertTrue([[resultToCheck getDisplayString] isEqualTo:@"🏎️ :racing_car:"]);
 }
 
 
 - (void)testUserDefinedKeywords {
+    Emoji* resultToCheck;
     NSMutableArray* match = [DataHelper getMatchingEmoji:@":dino"];
-    XCTAssertTrue([match[0] isEqualTo:@"🦖 :t-rex:"]);
+    resultToCheck = match[0];
+    XCTAssertTrue([[resultToCheck getDisplayString] isEqualTo:@"🦖 :t-rex:"]);
 }
 
 - (void)testResultOrder {
+    Emoji* resultToCheck;
+    Emoji* resultToCheck2;
     NSMutableArray* match = [DataHelper getMatchingEmoji:@":claus"];
-    XCTAssertTrue([match[0] isEqualTo:@"🤶 :mrs_claus:"]);
-    XCTAssertTrue([match[1] isEqualTo:@"🎅 :santa:"]);
+    resultToCheck = match[0];
+    resultToCheck2 = match[1];
+    XCTAssertTrue([[resultToCheck getDisplayString] isEqualTo:@"🤶 :mrs_claus:"]);
+    XCTAssertTrue([[resultToCheck2 getDisplayString] isEqualTo:@"🎅 :santa:"]);
 }
 
 @end

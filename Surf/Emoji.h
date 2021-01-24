@@ -8,8 +8,11 @@
 
 @property NSString *shortName;
 @property NSString *unified;
+@property NSString *emojiChar;
 @property NSArray *allNames;
 @property NSArray *allKeywords;
 @property NSDecimalNumber *decimal;
-
+- (void)setEmojiCharFromUnified:(NSString*)code;
+- (NSString*)getDisplayString;
+- (BOOL)compareTo:(Emoji*)other;
 @end
