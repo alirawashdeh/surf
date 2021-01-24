@@ -29,6 +29,8 @@
 		4189F13325A2459C005D7E8A /* WelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4189F13125A2459C005D7E8A /* WelcomeController.m */; };
 		4189F13425A2459C005D7E8A /* Welcome.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4189F13225A2459C005D7E8A /* Welcome.xib */; };
 		419F444C259A376E0044E9F6 /* emoji-withkeywords.json in Resources */ = {isa = PBXBuildFile; fileRef = 419F444B259A376D0044E9F6 /* emoji-withkeywords.json */; };
+		41A07ABD25BDDAC800A9B9B9 /* Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A07ABC25BDDAC800A9B9B9 /* Emoji.m */; };
+		41A07AC625BDDD4F00A9B9B9 /* EmojiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A07AC525BDDD4F00A9B9B9 /* EmojiTests.m */; };
 		41ACC52E254C7D250088B9B0 /* EmojiSelectController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41ACC52C254C7D250088B9B0 /* EmojiSelectController.m */; };
 		41ACC52F254C7D250088B9B0 /* EmojiPopover.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41ACC52D254C7D250088B9B0 /* EmojiPopover.xib */; };
 		41F188952572456800E1A04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41F188942572456800E1A04F /* Assets.xcassets */; };
@@ -100,6 +102,9 @@
 		4189F13125A2459C005D7E8A /* WelcomeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeController.m; sourceTree = "<group>"; };
 		4189F13225A2459C005D7E8A /* Welcome.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Welcome.xib; sourceTree = "<group>"; };
 		419F444B259A376D0044E9F6 /* emoji-withkeywords.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "emoji-withkeywords.json"; sourceTree = "<group>"; };
+		41A07ABC25BDDAC800A9B9B9 /* Emoji.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Emoji.m; sourceTree = "<group>"; };
+		41A07AC125BDDAEA00A9B9B9 /* Emoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Emoji.h; sourceTree = "<group>"; };
+		41A07AC525BDDD4F00A9B9B9 /* EmojiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmojiTests.m; sourceTree = "<group>"; };
 		41ACC52B254C7D250088B9B0 /* EmojiSelectController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmojiSelectController.h; sourceTree = "<group>"; };
 		41ACC52C254C7D250088B9B0 /* EmojiSelectController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmojiSelectController.m; sourceTree = "<group>"; };
 		41ACC52D254C7D250088B9B0 /* EmojiPopover.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiPopover.xib; sourceTree = "<group>"; };
@@ -163,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				41599ED6259E4F97000A2BBC /* PreferencesTests.m */,
+				41A07AC525BDDD4F00A9B9B9 /* EmojiTests.m */,
 				41599EEB259F5263000A2BBC /* DataHelperTests.m */,
 				41599ED8259E4F97000A2BBC /* Info.plist */,
 			);
@@ -219,6 +225,8 @@
 				41751FAB254C6A95000B1398 /* AppDelegate.m */,
 				41F188942572456800E1A04F /* Assets.xcassets */,
 				419F444B259A376D0044E9F6 /* emoji-withkeywords.json */,
+				41A07ABC25BDDAC800A9B9B9 /* Emoji.m */,
+				41A07AC125BDDAEA00A9B9B9 /* Emoji.h */,
 				416B53862556E35B00766B82 /* EventTap.h */,
 				416B53872556E35B00766B82 /* EventTap.m */,
 				4136A123259CEE66003B5B35 /* AccessibilityHelper.h */,
@@ -370,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41599ED7259E4F97000A2BBC /* PreferencesTests.m in Sources */,
+				41A07AC625BDDD4F00A9B9B9 /* EmojiTests.m in Sources */,
 				41599EEC259F5263000A2BBC /* DataHelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41A07ABD25BDDAC800A9B9B9 /* Emoji.m in Sources */,
 				4127C52525603FD6002C1057 /* ClickableTableView.m in Sources */,
 				41751FB7254C6A9B000B1398 /* main.m in Sources */,
 				4136A11A259C9F09003B5B35 /* Preferences.m in Sources */,

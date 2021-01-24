@@ -7,21 +7,37 @@
 
 #import "DataHelper.h"
 #import "Preferences.h"
+#import "Emoji.h"
 #import <Foundation/Foundation.h>
 
-NSDictionary* jsonDict;
+NSMutableArray *emojiArray;
 
 @implementation DataHelper
 
 + (void) init {
-    jsonDict = [self JSONFromFile];
+    emojiArray = [self JSONFromFile];
   }
 
-+ (NSDictionary *)JSONFromFile
++ (NSMutableArray *)JSONFromFile
 {
+    NSMutableArray *returnArray = [[NSMutableArray alloc] init];
+    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"emoji-withkeywords" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:path];
-    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    for (NSDictionary *item in jsonDict) {
+        Emoji *emoji = [[Emoji alloc] init];
+        [emoji setShortName:[item objectForKey:@"short_name"]];
+        [emoji setUnified:[item objectForKey:@"unified"]];
+        
+        [emoji setAllNames:[item objectForKey:@"short_names"]];
+        [emoji setAllKeywords:[item objectForKey:@"keywords"]];
+        NSString *addedIn = [item objectForKey:@"added_in"];
+        [emoji setDecimal:[NSDecimalNumber decimalNumberWithString:addedIn]];
+        [returnArray addObject:emoji];
+    }
+    return returnArray;
 }
 
 + (NSMutableArray*)getMatchingEmoji:(NSString*) string
@@ -33,34 +49,28 @@ NSDictionary* jsonDict;
     NSMutableArray *keywordMatches = [NSMutableArray array];
     
     
-        for (NSDictionary *item in jsonDict) {
-            NSString *name = [item objectForKey:@"short_name"];
-            NSString *unified = [item objectForKey:@"unified"];
-            NSArray *allNames = [item objectForKey:@"short_names"];
-            NSArray *allKeywords = [item objectForKey:@"keywords"];
-            NSString *addedIn = [item objectForKey:@"added_in"];
-            NSDecimalNumber *decimal = [NSDecimalNumber decimalNumberWithString:addedIn];
-
+        for (Emoji *emoji in emojiArray) {
+        
             // Check version and search
-            if([decimal compare:[NSNumber numberWithInt:13]] == NSOrderedAscending)
+            if([emoji.decimal compare:[NSNumber numberWithInt:13]] == NSOrderedAscending)
             {
                 // Convert hex to emoji
-                NSArray *hexcodes = [unified componentsSeparatedByString:@"-"];
-                NSMutableString *emoji = [NSMutableString stringWithCapacity:50];
+                NSArray *hexcodes = [emoji.unified componentsSeparatedByString:@"-"];
+                NSMutableString *emojiChar = [NSMutableString stringWithCapacity:50];
                 for(int i = 0; i < [hexcodes count]; i++)
                 {
                     int value = 0;
                     sscanf([hexcodes[i] cStringUsingEncoding:NSUTF8StringEncoding], "%x", &value);
                     uint32_t data = OSSwapHostToLittleInt32(value); // Convert to little-endian
                     NSString *str = [[NSString alloc] initWithBytes:&data length:4 encoding:NSUTF32LittleEndianStringEncoding];
-                    [emoji appendString:[NSString stringWithFormat:@"%@",str]];
+                    [emojiChar appendString:[NSString stringWithFormat:@"%@",str]];
                 }
                 
                 // Check for matches
                 BOOL exactMatch = false;
                 BOOL keywordMatch = false;
                 BOOL userDefinedKeywordMatch = false;
-                for (NSString *nameItem in allNames) {
+                for (NSString *nameItem in emoji.allNames) {
                     {
                         if([self shortNameStringMatch:string checkIn:nameItem])
                         {
@@ -68,7 +78,7 @@ NSDictionary* jsonDict;
                         }
                     }
                 }
-                for (NSString *keyword in allKeywords) {
+                for (NSString *keyword in emoji.allKeywords) {
                     {
                         if([keyword containsString:[string substringFromIndex:1 ]])
                         {
@@ -76,9 +86,9 @@ NSDictionary* jsonDict;
                         }
                     }
                 }
-                if(userDefinedDict[emoji] != nil)
+                if(userDefinedDict[emojiChar] != nil)
                 {
-                   NSArray *userKeywords = [[userDefinedDict objectForKey:emoji] componentsSeparatedByString:@","];
+                   NSArray *userKeywords = [[userDefinedDict objectForKey:emojiChar] componentsSeparatedByString:@","];
                    for (NSString *userKeyword in userKeywords) {
                         {
                             if([userKeyword containsString:[string substringFromIndex:1 ]])
@@ -92,15 +102,15 @@ NSDictionary* jsonDict;
                 {
                     if(exactMatch)
                     {
-                        [exactMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emoji,name]];
+                        [exactMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emojiChar,emoji.shortName]];
                     }
                     if(keywordMatch)
                     {
-                        [keywordMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emoji,name]];
+                        [keywordMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emojiChar,emoji.shortName]];
                     }
                     if(userDefinedKeywordMatch)
                     {
-                        [userDefinedKeywordMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emoji,name]];
+                        [userDefinedKeywordMatches addObject:[NSString stringWithFormat:@"%@ :%@:", emojiChar,emoji.shortName]];
                     }
                 }
             }
