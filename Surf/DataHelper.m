@@ -30,11 +30,10 @@ NSMutableArray *emojiArray;
         Emoji *emoji = [[Emoji alloc] init];
         [emoji setShortName:[item objectForKey:@"short_name"]];
         [emoji setUnified:[item objectForKey:@"unified"]];
-        
-        [emoji setAllNames:[item objectForKey:@"short_names"]];
-        [emoji setAllKeywords:[item objectForKey:@"keywords"]];
+        [emoji setAllShortNames:[item objectForKey:@"short_names"]];
+        [emoji setKeywords:[item objectForKey:@"keywords"]];
         NSString *addedIn = [item objectForKey:@"added_in"];
-        [emoji setDecimal:[NSDecimalNumber decimalNumberWithString:addedIn]];
+        [emoji setVersion:[NSDecimalNumber decimalNumberWithString:addedIn]];
         [emoji setEmojiCharFromUnified:emoji.unified];
         [returnArray addObject:emoji];
     }
@@ -52,13 +51,13 @@ NSMutableArray *emojiArray;
         for (Emoji *emoji in emojiArray) {
         
             // Check version and search
-            if([emoji.decimal compare:[NSNumber numberWithInt:13]] == NSOrderedAscending)
+            if([emoji.version compare:[NSNumber numberWithInt:13]] == NSOrderedAscending)
             {
                 // Check for matches
                 BOOL exactMatch = false;
                 BOOL keywordMatch = false;
                 BOOL userDefinedKeywordMatch = false;
-                for (NSString *nameItem in emoji.allNames) {
+                for (NSString *nameItem in emoji.allShortNames) {
                     {
                         if([self shortNameStringMatch:string checkIn:nameItem])
                         {
@@ -66,7 +65,7 @@ NSMutableArray *emojiArray;
                         }
                     }
                 }
-                for (NSString *keyword in emoji.allKeywords) {
+                for (NSString *keyword in emoji.keywords) {
                     {
                         if([keyword containsString:[string substringFromIndex:1 ]])
                         {

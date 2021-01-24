@@ -26,14 +26,14 @@
     Emoji *emoji = [Emoji alloc];
     [emoji setUnified:@"1F9B9-200D-2640-FE0F"];
     [emoji setShortName:@"female_supervillain"];
-    [emoji setAllNames:@[@"female_supervillain", @"badass"]];
-    [emoji setAllKeywords:@[@"criminal", @"evil", @"superpower", @"villain", @"woman", @"woman supervillain"]];
-    [emoji setDecimal:[NSDecimalNumber decimalNumberWithString:@"11.0"]];
+    [emoji setAllShortNames:@[@"female_supervillain", @"badass"]];
+    [emoji setKeywords:@[@"criminal", @"evil", @"superpower", @"villain", @"woman", @"woman supervillain"]];
+    [emoji setVersion:[NSDecimalNumber decimalNumberWithString:@"11.0"]];
     XCTAssertEqual(emoji.unified, @"1F9B9-200D-2640-FE0F" );
     XCTAssertEqual(emoji.shortName, @"female_supervillain" );
-    XCTAssertEqual(emoji.allNames[1], @"badass" );
-    XCTAssertEqual(emoji.allKeywords[1], @"evil" );
-    XCTAssertTrue([emoji.decimal compare:[NSDecimalNumber decimalNumberWithString:@"11.0"]] == NSOrderedSame);
+    XCTAssertEqual(emoji.allShortNames[1], @"badass" );
+    XCTAssertEqual(emoji.keywords[1], @"evil" );
+    XCTAssertTrue([emoji.version compare:[NSDecimalNumber decimalNumberWithString:@"11.0"]] == NSOrderedSame);
 }
 
 - (void)testEmojiChar {
@@ -55,27 +55,27 @@
     Emoji *emoji1 = [Emoji alloc];
     [emoji1 setUnified:@"1F9B9-200D-2640-FE0F"];
     [emoji1 setShortName:@"female_supervillain"];
-    [emoji1 setAllNames:@[@"female_supervillain", @"badass"]];
-    [emoji1 setAllKeywords:@[@"criminal", @"evil", @"superpower", @"villain", @"woman", @"woman supervillain"]];
-    [emoji1 setDecimal:[NSDecimalNumber decimalNumberWithString:@"11.0"]];
+    [emoji1 setAllShortNames:@[@"female_supervillain", @"badass"]];
+    [emoji1 setKeywords:@[@"criminal", @"evil", @"superpower", @"villain", @"woman", @"woman supervillain"]];
+    [emoji1 setVersion:[NSDecimalNumber decimalNumberWithString:@"11.0"]];
     [emoji1 setEmojiCharFromUnified:emoji1.unified];
     [emoji1 setShortName:@"female_supervillain"];
     
     Emoji *emoji2 = [Emoji alloc];
     [emoji2 setUnified:@"1F9B9-200D-2640-FE0F"];
     [emoji2 setShortName:@"female_supervillain"];
-    [emoji2 setAllNames:@[@"female_supervillain", @"badass"]];
-    [emoji2 setAllKeywords:@[@"criminal", @"evil", @"superpower", @"villain", @"woman", @"woman supervillain"]];
-    [emoji2 setDecimal:[NSDecimalNumber decimalNumberWithString:@"11.0"]];
+    [emoji2 setAllShortNames:@[@"female_supervillain", @"badass"]];
+    [emoji2 setKeywords:@[@"criminal", @"evil", @"superpower", @"villain", @"woman", @"woman supervillain"]];
+    [emoji2 setVersion:[NSDecimalNumber decimalNumberWithString:@"11.0"]];
     [emoji2 setEmojiCharFromUnified:emoji2.unified];
     [emoji2 setShortName:@"female_supervillain"];
     
     Emoji *emoji3 = [Emoji alloc];
     [emoji3 setUnified:@"1F9B9-200D-2642-FE0F"];
     [emoji3 setShortName:@"male_supervillain"];
-    [emoji3 setAllNames:@[@"male_supervillain", @"badass"]];
-    [emoji3 setAllKeywords:@[@"criminal", @"evil", @"superpower", @"villain", @"man", @"man supervillain"]];
-    [emoji3 setDecimal:[NSDecimalNumber decimalNumberWithString:@"11.0"]];
+    [emoji3 setAllShortNames:@[@"male_supervillain", @"badass"]];
+    [emoji3 setKeywords:@[@"criminal", @"evil", @"superpower", @"villain", @"man", @"man supervillain"]];
+    [emoji3 setVersion:[NSDecimalNumber decimalNumberWithString:@"11.0"]];
     [emoji3 setEmojiCharFromUnified:emoji3.unified];
     [emoji3 setShortName:@"male_supervillain"];
     

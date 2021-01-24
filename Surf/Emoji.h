@@ -9,9 +9,9 @@
 @property NSString *shortName;
 @property NSString *unified;
 @property NSString *emojiChar;
-@property NSArray *allNames;
-@property NSArray *allKeywords;
-@property NSDecimalNumber *decimal;
+@property NSArray *allShortNames;
+@property NSArray *keywords;
+@property NSDecimalNumber *version;
 - (void)setEmojiCharFromUnified:(NSString*)code;
 - (NSString*)getDisplayString;
 - (BOOL)compareTo:(Emoji*)other;
