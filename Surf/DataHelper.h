@@ -10,7 +10,7 @@
 @interface DataHelper : NSObject
 
 + (void)init;
-+ (NSMutableArray*)JSONFromFile;
++ (NSMutableArray*)fetchEmojiFromJSON;
 + (NSMutableArray*)getMatchingEmoji:(NSString*) string;
 + (NSMutableArray*)deduplicateArray:(NSMutableArray*) nonUniqueValues;
 @end

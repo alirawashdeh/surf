@@ -61,4 +61,9 @@
     XCTAssertTrue([[resultToCheck2 getDisplayString] isEqualTo:@"🎅 :santa:"]);
 }
 
+- (void)testDeDuplication {
+    NSMutableArray* matches = [DataHelper getMatchingEmoji:@":villain"];
+    XCTAssertEqual(matches.count,3); //🦹‍♀️🦹‍♂️🦹
+}
+
 @end

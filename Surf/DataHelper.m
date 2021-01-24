@@ -15,10 +15,10 @@ NSMutableArray *emojiArray;
 @implementation DataHelper
 
 + (void) init {
-    emojiArray = [self JSONFromFile];
+    emojiArray = [self fetchEmojiFromJSON];
   }
 
-+ (NSMutableArray *)JSONFromFile
++ (NSMutableArray *)fetchEmojiFromJSON
 {
     NSMutableArray *returnArray = [[NSMutableArray alloc] init];
     
@@ -54,14 +54,12 @@ NSMutableArray *emojiArray;
             if([emoji.version compare:[NSNumber numberWithInt:13]] == NSOrderedAscending)
             {
                 // Check for matches
-                BOOL exactMatch = false;
-                BOOL keywordMatch = false;
-                BOOL userDefinedKeywordMatch = false;
                 for (NSString *nameItem in emoji.allShortNames) {
                     {
                         if([self shortNameStringMatch:string checkIn:nameItem])
                         {
-                            exactMatch = true;
+                            [exactMatches addObject:emoji];
+                            break;
                         }
                     }
                 }
@@ -69,7 +67,8 @@ NSMutableArray *emojiArray;
                     {
                         if([keyword containsString:[string substringFromIndex:1 ]])
                         {
-                            keywordMatch = true;
+                            [keywordMatches addObject:emoji];
+                            break;
                         }
                     }
                 }
@@ -80,24 +79,10 @@ NSMutableArray *emojiArray;
                         {
                             if([userKeyword containsString:[string substringFromIndex:1 ]])
                             {
-                                userDefinedKeywordMatch = true;
+                                [userDefinedKeywordMatches addObject:emoji];
+                                break;
                             }
                         }
-                    }
-                }
-                if(exactMatch || keywordMatch || userDefinedKeywordMatch)
-                {
-                    if(exactMatch)
-                    {
-                        [exactMatches addObject:emoji];
-                    }
-                    if(keywordMatch)
-                    {
-                        [keywordMatches addObject:emoji];
-                    }
-                    if(userDefinedKeywordMatch)
-                    {
-                        [userDefinedKeywordMatches addObject:emoji];
                     }
                 }
             }
